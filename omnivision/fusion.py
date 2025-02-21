@@ -67,9 +67,10 @@ class Fusion(Node):
             Image,
             "texturized_depth_map",
             1)
-
+        
+        self.get_logger().info(str(self.get_parameter('transformation_matrix').value))
         self.transformation_matrix = np.array(
-            self.get_parameter('transformation_matrix')).reshape(3, 3)
+            self.get_parameter('transformation_matrix').value).reshape((4, 4))
 
         self.bridge=CvBridge()
         self.latest_image = None
@@ -136,9 +137,10 @@ class Fusion(Node):
         x = x[valid_indices]
         y = y[valid_indices]
 
-        if self.pointcloud_publisher_.get_subscription_count() > 0:
+        colors = numpy_image[v, u]
+
+        if self.texturized_pointcloud_publisher_.get_subscription_count() > 0:
             # Add alpha channel and concatenate for rviz2
-            colors = numpy_image[v, u]
             alpha = np.full(colors.shape[0], 255, dtype=np.uint32)
             rgba_colors = np.column_stack((colors.astype(np.uint32), alpha))
             rgba_uint32 = (
@@ -171,10 +173,10 @@ class Fusion(Node):
             textured_pointcloud = pc2.create_cloud(header, fields, textured_points)
 
             # Publish the textured point cloud
-            self.texturized_pointcloud_publisher_pointcloud_publisher_.publish(textured_pointcloud)
+            self.texturized_pointcloud_publisher_.publish(textured_pointcloud)
             self.get_logger().info('Published textured point cloud')
 
-        if self.texturized_depth_map_publisher_.get_subscription_count() > 0:
+        if self.depth_map_publisher_.get_subscription_count() > 0:
             # Create a depth map from the transformed points
             depth_map = np.zeros((numpy_image.shape[0], numpy_image.shape[1]), dtype=np.float32)
             for i in range(len(u)):

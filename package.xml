@@ -3,14 +3,17 @@
 <package format="3">
   <name>omnivision</name>
   <version>0.0.1</version>
-  <description>TODO: Package description</description>
+  <description>
+    A ros 2 package designed for 360° camera and lidar fusion. It
+    captures equirectangular video feeds and lidar point clouds, 
+    fusing them to create textured 3d representations of the environment.
+  </description>
   <maintainer email="Blaine.Oania@gmail.com">blaine</maintainer>
-  <license>GNU GPL v3.0</license>
+  <license>GNU GPL-3.0</license>
 
   <buildtool_depend>ament_python</buildtool_depend>
 
   <depend>rclpy</depend>
-  <depend>sensor_msgs</depend>
   <depend>cv_bridge</depend>
   <depend>sensor_msgs</depend>
   <depend>opencv-python</depend>
