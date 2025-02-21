@@ -17,7 +17,8 @@ This project was created for WayneHacks 3 @ Wayne State University! See the DevP
 - **Dynamic Visualization Compute**: Only generates pointclouds / depthmaps when topics have subscribers.
 
 ## Installation 🛠️
-### Prerequisites
+### Prerequisites:w
+
 
 - ROS 2 (Humble or newer recommended)
 
@@ -70,7 +71,7 @@ Customize the launch file with the following parameters:
 
 - **depth_map_topic**: Topic name for the generated depth map (default: /omnivision/depth_map).
 
-## Example
+### Example
 
 To launch with custom topics:
 ```sh
