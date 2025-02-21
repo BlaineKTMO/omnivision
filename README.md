@@ -77,7 +77,7 @@ To launch with custom topics:
 ros2 launch omnivision bringup.launch.py camera_topic:=/my_camera lidar_topic:=/my_lidar
 ```
 
-To Do (Contributions Welcome!) 🛠️
+## To Do (Contributions Welcome!) 🛠️
 
 - Optimization: Improve processing efficiency and reduce resource usage.
 
