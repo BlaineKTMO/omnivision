@@ -6,7 +6,7 @@ Applications include anywhere you need full surrounding depth information using 
 
 This project was created for WayneHacks 3 @ Wayne State University! See the DevPost submission [here](https://devpost.com/software/immersive-visual-fusion?_gl=1*j515sv*_gcl_au*MTE2NzU3NDQ5OC4xNzM3MjcwNzg2*_ga*MTU5ODMzMzgwOS4xNzM3MjcwODM1*_ga_0YHJK3Y10M*MTc0MDExNjY0OC4xNC4xLjE3NDAxMTY2ODMuMC4wLjA.).
 
-# Features 🚀
+## Features 🚀
 
 - **360-degree Camera and LiDAR Integration**: Full environmental coverage from 3D LiDAR and 360° camera.
 
@@ -16,8 +16,8 @@ This project was created for WayneHacks 3 @ Wayne State University! See the DevP
 
 - **Dynamic Visualization Compute**: Only generates pointclouds / depthmaps when topics have subscribers.
 
-# Installation 🛠️
-## Prerequisites
+## Installation 🛠️
+### Prerequisites
 
 - ROS 2 (Humble or newer recommended)
 
@@ -29,7 +29,7 @@ This project was created for WayneHacks 3 @ Wayne State University! See the DevP
 
 - NumPy
 
-## Steps
+### Steps
 
 - Clone the repository into your ROS 2 workspace:
 ```sh
@@ -50,15 +50,15 @@ Source the workspace:
 ```sh
 source /path/to/ros2_ws/install/setup.bash
 ```
-# Usage 🖥️
-## Launching the Package
+## Usage 🖥️
+### Launching the Package
 
 To start the Omnivision system, use the provided launch file:
 ```sh
 ros2 launch omnivision bringup.launch.py
 ```
 
-## Parameters
+### Parameters
 
 Customize the launch file with the following parameters:
 
